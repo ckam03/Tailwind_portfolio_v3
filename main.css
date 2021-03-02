@@ -1,0 +1,9 @@
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
+
+.headingIcon {
+    @apply flex items-center justify-center duration-500 ease-in-out dark:bg-coolGray-700 border-2 rounded-full w-12 h-12 text-coolGray-600 dark:text-coolGray-200 cursor-pointer dark:border-coolGray-500 border-coolGray-200 hover:bg-teal-500 hover:text-teal-50 dark:hover:text-teal-50 dark:hover:bg-teal-400;
+}

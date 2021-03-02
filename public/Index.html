@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="tailwindoutput.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron&family=Poppins:wght@300&family=Quicksand:wght@500&display=swap"
+    rel="stylesheet">
+  <script defer src="index.js"></script>
+  <title>Chris Kamer</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+
+  <script>
+    if (localStorage.theme === 'dark' || (!'theme' in localStorage && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.querySelector('html').classList.add('dark')
+
+    } else if (localStorage.theme === 'dark') {
+      document.querySelector('html').classList.add('dark')
+    }
+  </script>
+
+  <style>
+    input:checked~#colorswitcher {
+      transform: translateX(24px);
+    }
+
+    #menu-toggle:checked+#menu {
+      display: block;
+      transform: translateY(168px);
+    }
+
+    .animate span:nth-child(1) {
+      transform: rotate(135deg) translate(8px, -0.5px);
+    }
+
+    .animate span:nth-child(2) {
+      opacity: 0;
+      transform: translateX(-10px);
+    }
+
+    .animate span:nth-child(3) {
+      transform: rotate(-135deg) translate(8px, 0.5px)
+    }
+  </style>
+</head>
+
+<body class="bg-coolGray-50 dark:bg-coolGray-800 ease-in-out duration-500">
+  <section id="homesection" class="border-gray-300 border-b dark:border-coolGray-600">
+    <header class="flex items-center justify-between flex-wrap lg:px-48 lg:py-6">
+      <div class="px-4 py-5 lg:p-0" id="logo">
+        <a href=""
+          class="font-orbitron text-teal-500 border-teal-500 dark:text-teal-400 text-4xl border-4 dark:border-teal-400 font-semibold px-2">C</a>
+      </div>
+      <label for="menu-toggle" class="lg:hidden flex items-center">
+        <div id="menuButton" class="space-y-1 w-full h-full relative cursor-pointer p-4">
+          <span id="first" class="block w-5 h-0.5 bg-black dark:bg-coolGray-300 ease-in-out duration-500"></span>
+          <span id="second" class="block w-5 h-0.5 bg-black dark:bg-coolGray-300 ease-in-out duration-500"></span>
+          <span id="last" class="block w-5 h-0.5 bg-black dark:bg-coolGray-300 ease-in-out duration-500"></span>
+        </div>
+      </label>
+      <input type="checkbox" class="hidden" id="menu-toggle" />
+      <nav class="hidden w-full shadow-md absolute lg:relative lg:flex lg:items-center lg:w-auto lg:shadow-none z-20"
+        id="menu">
+        <ul
+          class="font-Quicksand list-none text-center space-y-10 lg:space-y-0 py-6 bg-coolGray-50 dark:bg-coolGray-800 duration-500 ease-in-out text-gray-600 dark:text-coolGray-200 lg:flex items-center lg:space-x-16 text-sm">
+          <li id="projectnav">
+            <a href="#portfolio" class="hover:text-teal-400 duration-300 ease-in-out">Projects</a>
+          </li>
+          <li id="aboutnav">
+            <a href="#about" class="hover:text-teal-400 duration-300 ease-in-out">About</a>
+          </li>
+          <li id="contactnav">
+            <a href="#contact" class="hover:text-teal-400 duration-300 ease-in-out">Contact</a>
+          </li>
+          <div id="toggle" class="flex items-center justify-center">
+            <label class="cursor-pointer rounded-xl bg-coolGray-500 h-6 w-12 flex items-center px-0.5" for="switch">
+              <input class="hidden" type="checkbox" id="switch">
+              <div id="colorswitcher"
+                class="rounded-full bg-coolGray-200 dark:bg-coolGray-800 w-5 h-5 ease-in-out duration-500"></div>
+            </label>
+          </div>
+        </ul>
+      </nav>
+    </header>
+
+    <div id="homecontainer"
+      class="lg:flex lg:items-center lg:justify-around md:items-center md:justify-center lg:px-48 md:px-4">
+      <div class="lg:text-left py-24 lg:py-44 text-center">
+        <h1 class="font-poppins text-2xl lg:text-3xl dark:text-gray-100 lg:pl-2">Hi, my name is</h1>
+        <h2 class="font-poppins text-5xl lg:text-7xl text-teal-500 py-2">Chris Kamer</h2>
+        <p id="pheading" class="lg:pr-2 font-Quicksand text-lg pb-4 text-gray-600 dark:text-gray-300">I'm a
+          Web Developer living
+          in Glendale, Arizona</p>
+        <a href="mailto:cwkamer@gmail.com">
+          <button id="contactbutton"
+            class="lg:ml-4 rounded px-5 py-2 border-none bg-teal-500 text-teal-100 font-Quicksand hover:bg-teal-700 hover:text-teal-50 duration-200 ease-in-out">Contact
+            Me</button>
+        </a>
+      </div>
+      <div class="flex justify-center">
+
+        <img id="imghead" class="w-96 h-96" src="/assets/app_development1_SVG.svg">
+      </div>
+    </div>
+
+    <ul id="icons" class="pl-4 pb-10 space-y-1">
+      <li>
+        <a class="headingIcon" href="../assets/resume.pdf" target="_blank">
+          <svg class="h-6 w-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+            <path
+              d="M288 248v28c0 6.6-5.4 12-12 12H108c-6.6 0-12-5.4-12-12v-28c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12zm-12 72H108c-6.6 0-12 5.4-12 12v28c0 6.6 5.4 12 12 12h168c6.6 0 12-5.4 12-12v-28c0-6.6-5.4-12-12-12zm108-188.1V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V48C0 21.5 21.5 0 48 0h204.1C264.8 0 277 5.1 286 14.1L369.9 98c9 8.9 14.1 21.2 14.1 33.9zm-128-80V128h76.1L256 51.9zM336 464V176H232c-13.3 0-24-10.7-24-24V48H48v416h288z" />
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a class="headingIcon" href="https://github.com/ckam03" target="_blank">
+          <svg class="h-6 w-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 495 512">
+            <path
+              d="M155.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" />
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a class="headingIcon" href="https://www.linkedin.com/in/chriskamer/" target="_blank">
+          <svg class="cursor-pointer h-6 w-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <path
+              d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z" />
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a class="headingIcon" href="https://codepen.io/ckam03" target="_blank">
+          <svg class="cursor-pointer h-6 w-6 " xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" class="feather feather-codepen">
+            <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"></polygon>
+            <line x1="12" y1="22" x2="12" y2="15.5"></line>
+            <polyline points="22 8.5 12 15.5 2 8.5"></polyline>
+            <polyline points="2 15.5 12 8.5 22 15.5"></polyline>
+            <line x1="12" y1="2" x2="12" y2="8.5"></line>
+          </svg>
+        </a>
+      </li>
+    </ul>
+  </section>
+  <main>
+    <section id="portfoliosection" class="py-10 p-4 lg:flex lg:flex-col lg:justify-center lg:items-center">
+      <div class="lg:py-10 flex flex-col items-center">
+        <svg style="z-index: -10;" class="text-amber-500 opacity-60 fill-current h-64 absolute left-0">
+          <circle cx="40" cy="150" r="100" />
+        </svg>
+        <div class="">
+          <h3 class="font-poppins font-semibold text-3xl pb-10 dark:text-gray-200">PROJECTS</h3>
+        </div>
+      </div>
+      <div id="container"
+        class="grid lg:grid-cols-2 md:grid-cols-2 xl:w-3/5 lg:gap-20 gap-8 md:gap-14 lg:w-4/5 lg:pt-10 text-center lg:text-left z-100 ">
+        <div id="left" class="flex flex-col lg:pr-16">
+          <h4 class="font-poppins font-semibold text-xl dark:text-gray-200">Trip Planit</h4>
+          <p class="font-Quicksand text-lg text-gray-600 py-6 dark:text-gray-400">A travel planning web
+            application
+            built with React,
+            TailwindCSS and ASP.NET Core. Utilizes the Google Maps API to plan routes and find new destinations.</p>
+
+          <div
+            class="flex flex-wrap font-Quicksand text-blueGray-800 dark:text-coolGray-200 text-sm justify-center lg:justify-start">
+            <span class="inline-block bg-blueGray-200 dark:bg-coolGray-600 rounded-full px-3 py-1 ">React</span>
+            <span class="inline-block bg-blueGray-200 dark:bg-coolGray-600 rounded-full px-3 py-1 ">TailwindCSS</span>
+            <span class="inline-block bg-blueGray-200 dark:bg-coolGray-600 rounded-full px-3 py-1 ">ASP.NET Core</span>
+            <span class="inline-block bg-blueGray-200 dark:bg-coolGray-600 rounded-full px-3 py-1 ">Google Maps
+              API</span>
+          </div>
+          <div id="buttons" class="font-Quicksand flex space-x-2 py-6 items-center justify-center lg:justify-start">
+            <a href="https://github.com/ckam03/tripplan" target="_blank">
+
+              <button
+                class="flex items-center border border-teal-500 rounded text-teal-500 py-2 px-5 hover:bg-teal-500 hover:text-teal-100 transform ease-in-out duration-300">
+                <svg class="fill-current h-5 w-5 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
+                  <path
+                    d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" />
+                </svg>
+                <span>Github</span>
+              </button>
+            </a>
+            <button
+              class="disabled:opacity-50 flex items-center rounded bg-teal-500 text-teal-100 py-2 px-5 hover:bg-teal-700 transform ease-in-out duration-300" disabled>
+              <svg class="h-5 w-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+              <span>View Site</span>
+            </button>
+          </div>
+        </div>
+        <div class="relative bg-red-500 rounded pb-2/3">
+
+          <img class="absolute top-0 w-full h-full bg-cover border rounded" src="/assets/tripplanit.jpg">
+        </div>
+
+        <div id="left" class="flex flex-col lg:pr-16">
+          <h4 class="font-poppins font-semibold text-xl dark:text-gray-200">Personal Dashboard</h4>
+          <p class="font-Quicksand text-lg text-gray-600 py-6 dark:text-gray-400">A web application dashboard
+            built with React and
+            TailwindCSS. Shows weather updates, daily quotes, time, and a weekly goals list.</p>
+          <div
+            class="flex flex-wrap font-Quicksand text-blueGray-800 dark:text-coolGray-200 text-sm justify-center lg:justify-start">
+            <span class="inline-block bg-blueGray-200 dark:bg-coolGray-600 rounded-full px-3 py-1 ">React</span>
+            <span class="inline-block bg-blueGray-200 dark:bg-coolGray-600 rounded-full px-3 py-1 ">TailwindCSS</span>
+            <span class="inline-block bg-blueGray-200 dark:bg-coolGray-600 rounded-full px-3 py-1 ">Typescript</span>
+            <span class="inline-block bg-blueGray-200 dark:bg-coolGray-600 rounded-full px-3 py-1 ">OpenWeatherMap
+              API</span>
+            <span class="inline-block bg-blueGray-200 dark:bg-coolGray-600 rounded-full px-3 py-1 ">Quotes API</span>
+          </div>
+          <div id="buttons" class="font-Quicksand flex space-x-2 py-6 justify-center lg:justify-start">
+            <a href="https://github.com/ckam03/my_dashboard" target="_blank">
+              <button
+                class="flex items-center border border-teal-500 hover:bg-teal-500 hover:text-teal-100 transform duration-300 ease-in-out rounded text-teal-500 py-2 px-5">
+                <svg class="fill-current h-5 w-5 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
+                  <path
+                    d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" />
+                </svg>
+                <span>Github</span>
+              </button>
+            </a>
+            <button
+              class="disabled:opacity-50 flex items-center rounded bg-teal-500 text-teal-100 hover:bg-teal-700 transform duration-300 ease-in-out py-2 px-5" disabled>
+              <svg class="h-5 w-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+              <span>View Site</span>
+            </button>
+          </div>
+        </div>
+        <div class="relative bg-red-500 rounded pb-2/3">
+
+          <img class="absolute top-0 w-full h-full bg-cover border rounded" src="/assets/dashboard.jpg">
+        </div>
+    </section>
+    <section id="aboutsection">
+      <div class="flex flex-col text-center py-10 bg-teal-500 dark:bg-coolGray-700">
+        <h6 class="p-8 font-poppins font-bold text-3xl text-offwhite">ABOUT ME</h6>
+        <p class="m-auto lg:w-6/12 md:6/12 font-quicksand text-lg px-4 text-teal-50 dark:text-coolGray-300">Hi, I'm
+          Chris.
+          I like building things and learning new technologies. I'm always improving my development skills one project
+          at a time.
+          In my spare time I like to write music, workout, and cook.</p>
+        <div class="flex justify-center flex-wrap gap-8 py-20 -mb-48">
+          <div
+            class="flex flex-col text-center items-center rounded-xl w-72 h-72 shadow-xl p-6 bg-white dark:bg-coolGray-600">
+            <svg class=" h-7 w-7 mb-2 text-teal-500 dark:text-amber-500 fill-current" xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 640 512">
+              <path
+                d="M257.981 272.971L63.638 467.314c-9.373 9.373-24.569 9.373-33.941 0L7.029 444.647c-9.357-9.357-9.375-24.522-.04-33.901L161.011 256 6.99 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L257.981 239.03c9.373 9.372 9.373 24.568 0 33.941zM640 456v-32c0-13.255-10.745-24-24-24H312c-13.255 0-24 10.745-24 24v32c0 13.255 10.745 24 24 24h304c13.255 0 24-10.745 24-24z" />
+            </svg>
+
+            </svg>
+            <h8 class="font-poppins font-bold text-xl mb-2 dark:text-coolGray-200">Front End</h8>
+            <ul class="py-3 font-quicksand dark:text-coolGray-300">
+              <li>HTML5</li>
+              <li>CSS3</li>
+              <li>JavaScript</li>
+              <li>React</li>
+              <li>TailwindCSS</li>
+            </ul>
+          </div>
+          <div
+            class="flex flex-col items-center text-center rounded-xl w-72 h-72 shadow-xl p-6 bg-white dark:bg-coolGray-600">
+            <svg class="h-7 w-7 mb-2 text-teal-500 dark:text-amber-500 fill-current" xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512">
+              <path
+                d="M480 160H32c-17.673 0-32-14.327-32-32V64c0-17.673 14.327-32 32-32h448c17.673 0 32 14.327 32 32v64c0 17.673-14.327 32-32 32zm-48-88c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24zm-64 0c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24zm112 248H32c-17.673 0-32-14.327-32-32v-64c0-17.673 14.327-32 32-32h448c17.673 0 32 14.327 32 32v64c0 17.673-14.327 32-32 32zm-48-88c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24zm-64 0c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24zm112 248H32c-17.673 0-32-14.327-32-32v-64c0-17.673 14.327-32 32-32h448c17.673 0 32 14.327 32 32v64c0 17.673-14.327 32-32 32zm-48-88c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24zm-64 0c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24z" />
+            </svg>
+            </svg>
+            <h9 class="font-poppins font-bold text-xl mb-2 dark:text-coolGray-200">Back End</h9>
+            <ul class="py-3 font-quicksand dark:text-coolGray-300">
+              <li>Node.js</li>
+              <li>Express.js</li>
+              <li>ASP.NET Core</li>
+              <li>C#</li>
+              <li>SQL</li>
+            </ul>
+          </div>
+          <div
+            class="flex flex-col items-center text-center rounded-2xl w-72 h-72 shadow-xl p-6 md:pt-6 bg-white dark:bg-coolGray-600">
+            <svg class="h-7 w-7 mb-2 text-teal-500 dark:text-amber-500 fill-current" xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512">
+              <path
+                d="M501.1 395.7L384 278.6c-23.1-23.1-57.6-27.6-85.4-13.9L192 158.1V96L64 0 0 64l96 128h62.1l106.6 106.6c-13.6 27.8-9.2 62.3 13.9 85.4l117.1 117.1c14.6 14.6 38.2 14.6 52.7 0l52.7-52.7c14.5-14.6 14.5-38.2 0-52.7zM331.7 225c28.3 0 54.9 11 74.9 31l19.4 19.4c15.8-6.9 30.8-16.5 43.8-29.5 37.1-37.1 49.7-89.3 37.9-136.7-2.2-9-13.5-12.1-20.1-5.5l-74.4 74.4-67.9-11.3L334 98.9l74.4-74.4c6.6-6.6 3.4-17.9-5.7-20.2-47.4-11.7-99.6.9-136.6 37.9-28.5 28.5-41.9 66.1-41.2 103.6l82.1 82.1c8.1-1.9 16.5-2.9 24.7-2.9zm-103.9 82l-56.7-56.7L18.7 402.8c-25 25-25 65.5 0 90.5s65.5 25 90.5 0l123.6-123.6c-7.6-19.9-9.9-41.6-5-62.7zM64 472c-13.2 0-24-10.8-24-24 0-13.3 10.7-24 24-24s24 10.7 24 24c0 13.2-10.7 24-24 24z" />
+            </svg>
+            </svg>
+            <h10 class="font-poppins font-bold text-xl mb-2 dark:text-coolGray-200">Tools</h10>
+            <ul class="py-3 font-quicksand dark:text-coolGray-300">
+              <li>Figma</li>
+              <li>Github</li>
+              <li>VS Code</li>
+              <li>Visual Studio</li>
+              <li>Terminal</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="contactsection">
+      <div class="flex flex-col items-center justify-center mt-40 lg:py-20 text-center">
+        <h11 class="font-poppins lg:text-5xl text-3xl dark:text-coolGray-200">
+          Interested in working together?</h11>
+        <p class="font-quicksand py-10 text-lg dark:text-coolGray-300">I'm always open to discussing new opportunities
+          so
+          get in touch.</p>
+
+        <form class="flex flex-col text-left items-center dark:text-coolGray-300 space-y-4 w-full" name="contact"
+          method="POST" data-netlify="true">
+          <div>
+            <label class="block pb-2" for="name">Name</label>
+            <input
+              class="block p-2 border rounded-md w-80 bg-coolGray-100 dark:bg-coolGray-500 outline-none focus:border-teal-400"
+              type="text" name="name">
+          </div>
+          <div>
+            <label class="block pb-2" for="email">Email</label>
+            <input
+              class="block p-2 border rounded-md w-80 bg-coolGray-100 dark:bg-coolGray-500 outline-none focus:border-teal-400"
+              type="text" name="name">
+          </div>
+          <div>
+
+            <label class="block pb-2" for="message">Message</label>
+            <textarea
+              class="block p-2 border rounded-md w-80 h-48 bg-coolGray-100 dark:bg-coolGray-500 outline-none focus:border-teal-400"
+              name="message"></textarea>
+          </div>
+          <a href="mailto:cwkamer@gmail.com">
+            <button
+              class="bg-teal-500 font-poppins text-teal-50 py-2 px-6 mb-6 w-24 border-teal-500 hover:bg-teal-700 rounded focus:outline-none transform ease-in-out duration-300">Send</button>
+          </a>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer
+    class="flex flex-col items-center justify-center pt-5 font-quicksand text-sm bg-coolGray-700 text-coolGray-100">
+    <div class="px-4 py-5 lg:p-0">
+      <a href="#home" id="homenav"
+        class="font-orbitron text-coolGray-300 text-4xl border-4 border-coolGray-300 font-semibold px-2">C</a>
+    </div>
+    <ul class="flex items-center justify-center space-x-2 py-6">
+
+      <li
+        class="flex justify-center items-center w-12 h-12 border-2 rounded-full transition duration-500 ease-in-out dark:bg-coolGray-700 hover:bg-coolGray-300 dark:hover:bg-coolGray-300 border-coolGray-400 text-coolGray-200 hover:text-teal-400 cursor-pointer">
+        <a href="https://github.com/ckam03" target="_blank">
+          <svg class="cursor-pointer h-6 w-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 495 512">
+            <path
+              d="M155.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" />
+          </svg>
+        </a>
+      </li>
+      <li
+        class="flex justify-center items-center w-12 h-12 border-2 rounded-full transition duration-500 ease-in-out dark:bg-coolGray-700 hover:bg-coolGray-300 dark:hover:bg-coolGray-300 border-coolGray-400 text-coolGray-200 hover:text-teal-400 cursor-pointer">
+        <a href="https://www.linkedin.com/in/chriskamer/" target="_blank">
+          <svg class="cursor-pointer h-6 w-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <path
+              d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z" />
+          </svg>
+        </a>
+      </li>
+      <li
+        class="flex justify-center items-center w-12 h-12 border-2 rounded-full transition duration-500 ease-in-out dark:bg-coolGray-700 hover:bg-coolGray-300 dark:hover:bg-coolGray-300 border-coolGray-400 text-coolGray-200 hover:text-teal-400 cursor-pointer">
+        <a href="https://codepen.io/ckam03" target="_blank">
+          <svg class="cursor-pointer h-6 w-6 " xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" class="feather feather-codepen">
+            <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"></polygon>
+            <line x1="12" y1="22" x2="12" y2="15.5"></line>
+            <polyline points="22 8.5 12 15.5 2 8.5"></polyline>
+            <polyline points="2 15.5 12 8.5 22 15.5"></polyline>
+            <line x1="12" y1="2" x2="12" y2="8.5"></line>
+          </svg>
+        </a>
+      </li>
+    </ul>
+    Built by Chris Kamer &copy; 2021
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/ScrollToPlugin.min.js"></script>
+</body>
+
+</html>

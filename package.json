@@ -1,0 +1,22 @@
+{
+  "name": "tailwind_portfolio_v3",
+  "version": "1.0.0",
+  "description": "My Portfolio",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "tailwind build main.css -o public/tailwindoutput.css",
+    "devbuild:css": "cross-env NODE_ENV=production tailwind build main.css -o public/tailwindoutput.css"
+  },
+  "keywords": [
+    "portfolio",
+    "web"
+  ],
+  "author": "Chris Kamer",
+  "license": "ISC",
+  "dependencies": {
+    "tailwindcss": "^2.0.3"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
+  }
+}
