@@ -4,6 +4,8 @@ const projectnavlink = document.getElementById('projectnav');
 const aboutnavlink = document.getElementById('aboutnav');
 const contactnavlink = document.getElementById('contactnav');
 const homenavlink = document.getElementById('homenav');
+const form = document.getElementById('form');
+const formname = document.getElementById('name');
 const animateMenu = () => {
 
     if (menuButton.classList.contains('animate')) {
@@ -47,6 +49,7 @@ if (localStorage.theme == 'dark') {
         modeSwitch.checked = true;
     }
 }
+
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(ScrollToPlugin);
@@ -116,15 +119,15 @@ tl.from('#pheading', {
 },"-=0.2")
 
 tl.from('#contactbutton', {
-    y:'50',
+    y:'25',
     opacity: 0,
-    duration: 1,
-},"-=0.2")
+    
+},"-=0.3")
 
 tl.from('#imghead', {
     y:'50',
     opacity: 0,
-    duration: 1,
+    duration: 1.2,
 },"-=0.2")
 tl.from('#icons', {
     y: '50',

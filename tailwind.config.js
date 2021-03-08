@@ -18,9 +18,10 @@ module.exports = {
         coolGray: colors.coolGray,
         amber: colors.amber,
         teal: colors.teal,
+        red: colors.red,
       },
       backgroundImage: {
-
+        'dashboard': "url('/assets/dashboard.jpg')"
       },
       spacing: {
         '1/2': '50%',
